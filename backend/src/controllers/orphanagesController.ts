@@ -1,9 +1,9 @@
-import { request, Request, Response } from 'express'
+import { Request, Response } from 'express'
 import { getRepository } from 'typeorm';
 import Orphanage from '../models/Orphanage';
 
 export default {
-  async index(resquest: Request, response: Response){
+  async index(request: Request, response: Response){
     const orphanagesRepository = getRepository(Orphanage);
   
     const orphanages = await orphanagesRepository.find();
@@ -11,8 +11,8 @@ export default {
     return response.json(orphanages);
   },
 
-  async show(resquest: Request, response: Response){
-    const { id } = resquest.params;
+  async show(request: Request, response: Response){
+    const { id } = request.params;
 
     const orphanagesRepository = getRepository(Orphanage);
   
@@ -21,7 +21,7 @@ export default {
     return response.json(orphanage);
   },
 
-  async create(resquest: Request, response: Response){
+  async create(request: Request, response: Response){
     const {
       name,
       latitude,
