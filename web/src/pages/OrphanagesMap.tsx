@@ -8,6 +8,7 @@ import '../styles/orphanagesMap.css';
 import mapMarkerImg from '../images/map-marker.svg';
 import api from '../services/api';
 import mapIcon from '../components/Map/mapIcon';
+import Map from '../components/Map';
 
 interface Orphanage {
   id: number;
@@ -40,9 +41,7 @@ function OrphanagesMap() {
        </footer>
      </aside>
 
-     <MapContainer
-      center={[-3.7437369,-38.6239638]}
-      zoom={15}
+     <Map
       style={{ width: '100%', height: '100%'}}
      >
        {/* <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" /> */}
@@ -65,7 +64,7 @@ function OrphanagesMap() {
          )
        })}
 
-     </MapContainer>
+     </Map>
 
      <Link to="/orphanages/create" className="create-orphanage">
        <FiPlus size={32} color="#fff"/>
