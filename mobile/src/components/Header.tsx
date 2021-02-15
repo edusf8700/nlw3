@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 interface HeaderProps {
   title: string;
-  showCancel: boolean;
+  showCancel?: boolean;
 }
 
 export default function Header({ title, showCancel=true }: HeaderProps) {
